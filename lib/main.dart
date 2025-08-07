@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
       title: "Ayurvedic Care",
-      theme: ThemeData(colorScheme: AppColors.colorScheme),
+      theme: ThemeData(colorScheme: AppColors.colorScheme, fontFamily: "Poppins"),
       initialRoute: AppRoutes.splash,
       onGenerateRoute: AppRoutes.generateRoute,
     );

@@ -1,3 +1,4 @@
+import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -59,22 +60,17 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    const TextField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        hintText: "Enter your email",
-                        border: OutlineInputBorder(),
-                      ),
+                    CustomTextfiledWithLabelWidget(
+                      hintText: "Enter your email",
+                      label: "Email",
                     ),
                     const SizedBox(height: 20),
-                    const TextField(
+                    CustomTextfiledWithLabelWidget(
+                      hintText: "Enter password",
+                      label: "Password",
                       obscureText: true,
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        hintText: "Enter password",
-                        border: OutlineInputBorder(),
-                      ),
                     ),
+
                     const SizedBox(height: 30),
                     SizedBox(
                       width: double.infinity,
