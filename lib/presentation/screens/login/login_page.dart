@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-      
+
               /* login form */
               Expanded(
                 child: Padding(
@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                             fontFamily: "Poppins",
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
-      
+
                             fontStyle: FontStyle.normal,
                           ),
                         ),
@@ -79,9 +79,9 @@ class LoginPage extends StatelessWidget {
                         label: "Password",
                         obscureText: true,
                       ),
-      
+
                       const SizedBox(height: 135),
-                      ElevatedButtonWidget(label: "Login"),
+                      ElevatedButtonWidget(label: "Login", onPressed: () {}),
                       const Spacer(),
                       Center(
                         child: Padding(

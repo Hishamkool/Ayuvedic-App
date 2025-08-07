@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class ElevatedButtonWidget extends StatelessWidget {
   final String label;
   final Color backgroundColor;
+  final Color labelColor;
+  final VoidCallback onPressed;
 
   const ElevatedButtonWidget({
     super.key,
     required this.label,
     this.backgroundColor = AppColors.appThemeColor,
+    this.labelColor = Colors.black,
+    required this.onPressed,
   });
 
   @override

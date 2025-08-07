@@ -1,4 +1,5 @@
 import 'package:app/presentation/widgets/elevated_button_widget.dart';
+import 'package:app/presentation/widgets/register%20widgets/treatment_bottomsheet_widget.dart';
 import 'package:flutter/material.dart';
 
 class TreatmentsWidgets extends StatelessWidget {
@@ -113,10 +114,22 @@ class TreatmentsWidgets extends StatelessWidget {
 
         Container(
           padding: EdgeInsets.symmetric(vertical: 10),
-          color: 
-          Colors.red,
-          child: ElevatedButtonWidget( label: "+ Add Treatements",),
-        )
+
+          child: ElevatedButtonWidget(
+            onPressed: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                context: context,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                ),
+                builder: (context) => TreatmentBottomSheet(),
+              );
+            },
+            label: "+ Add Treatements",
+            backgroundColor: Color.fromRGBO(101, 189, 115, 0.6),
+          ),
+        ),
       ],
     );
   }
