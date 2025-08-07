@@ -1,4 +1,6 @@
+import 'package:app/core/constants/app_colors.dart';
 import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
+import 'package:app/presentation/widgets/elevated_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -59,35 +61,22 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 50),
                     CustomTextfiledWithLabelWidget(
                       hintText: "Enter your email",
                       label: "Email",
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     CustomTextfiledWithLabelWidget(
                       hintText: "Enter password",
                       label: "Password",
                       obscureText: true,
                     ),
 
-                    const SizedBox(height: 30),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF066838),
-                        ),
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ),
+                    const SizedBox(height: 135),
+                    ElevatedButtonWidget(label: "Login"),
                     const Spacer(),
-                    const Center(
+                    Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
                         child: Text.rich(
@@ -98,7 +87,7 @@ class LoginPage extends StatelessWidget {
                               TextSpan(
                                 text: "Terms and Conditions",
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: AppColors.hyperLinks,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -106,7 +95,7 @@ class LoginPage extends StatelessWidget {
                               TextSpan(
                                 text: "Privacy Policy.",
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: AppColors.hyperLinks,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -117,7 +106,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 25),
                   ],
                 ),
               ),

@@ -13,8 +13,11 @@ class AppColors {
     onError: Color(0xFFFFFFFF), // Error text/icons
   );
 
-  static Color appThemeColor = Color(0xff006837);
-  static Color textfiledBorder =Color.fromRGBO(0, 0, 0, 0.1);
-  static Color textfiledFill =Color.fromRGBO(217, 217, 217, 0.25);
+  static Color appThemeColor = Color.fromRGBO(0, 104, 55, 1);
 
+  /* textfiled colors */
+  static Color textfiledBorder = Color.fromRGBO(0, 0, 0, 0.1);
+  static Color textfiledFill = Color.fromRGBO(217, 217, 217, 0.25);
+
+  static Color hyperLinks = Color.fromRGBO(0, 40, 252, 1);  
 }
