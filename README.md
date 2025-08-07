@@ -87,6 +87,12 @@ Due to limited time constraints, API integration was not completed. However:
 🌐 [(https://github.com/Hishamkool/)](#) | ✉️ [linkedin.hisham@gmail.com](#)
 
 ---
+## 📦 Download APK
+
+You can download and test the latest APK release from the link below:
+
+🔗 [Download APK](https://drive.google.com/file/d/13ykqFeEy44pKkUYCtJDbvZoNwqBkcQmh/view?usp=sharing)
+
 
 > Built with ❤️ using Flutter and clean code principles.
 
