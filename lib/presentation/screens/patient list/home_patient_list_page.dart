@@ -1,4 +1,6 @@
 import 'package:app/core/constants/app_colors.dart';
+import 'package:app/presentation/widgets/appbar_notification_widget.dart';
+import 'package:app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePatientListPage extends StatelessWidget {
@@ -14,7 +16,6 @@ class HomePatientListPage extends StatelessWidget {
 
   HomePatientListPage({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return
@@ -49,33 +50,7 @@ class HomePatientListPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /*    Top Row with back, search, notification  */
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
-                  Stack(
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.notifications_none_outlined, size: 28),
-                        onPressed: () {},
-                      ),
-
-                      Positioned(
-                        right: 10,
-                        top: 9,
-                        child: Container(
-                          width: 8,
-                          height: 8,
-                          decoration: const BoxDecoration(
-                            color: Colors.red,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              AppbarNotificationWidget(),
               const SizedBox(height: 10),
               /* search field */
               Row(
@@ -254,7 +229,9 @@ class HomePatientListPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.register);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.appThemeColor,
                     shape: RoundedRectangleBorder(
