@@ -1,7 +1,6 @@
 import 'package:app/presentation/widgets/appbar_notification_widget.dart';
 import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
 import 'package:app/presentation/widgets/elevated_button_widget.dart';
-import 'package:app/presentation/widgets/register%20widgets/treatment_bottomsheet_widget.dart';
 import 'package:app/presentation/widgets/register%20widgets/treatments_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -135,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       /* Treatments */
                       TreatmentsWidgets(),
 
-                      
+
                       const SizedBox(height: 16),
                       CustomTextfiledWithLabelWidget(
                         label: "Advance amount",
