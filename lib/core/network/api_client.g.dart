@@ -32,7 +32,7 @@ class _ApiClient implements ApiClient {
           )
           .compose(
             _dio.options,
-            'Login/',
+            'Login',
             queryParameters: queryParameters,
             data: _data,
           )

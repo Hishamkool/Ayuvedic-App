@@ -1,12 +1,37 @@
+import 'dart:developer';
+
 import 'package:app/core/constants/app_colors.dart';
+import 'package:app/main.dart';
+import 'package:app/presentation/provider/login_provider.dart';
 import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
 import 'package:app/presentation/widgets/elevated_button_widget.dart';
 import 'package:app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController(
+    text: "test_user",
+  );
+  TextEditingController passwordController = TextEditingController(
+    text: "12345678",
+  );
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,20 +97,53 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(height: 50),
                       CustomTextfiledWithLabelWidget(
                         hintText: "Enter your email",
+                        textEditingController: emailController,
                         label: "Email",
                       ),
                       const SizedBox(height: 30),
                       CustomTextfiledWithLabelWidget(
+                        textEditingController: passwordController,
                         hintText: "Enter password",
                         label: "Password",
                         obscureText: true,
                       ),
 
                       const SizedBox(height: 135),
+
                       ElevatedButtonWidget(
                         label: "Login",
                         onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.home);
+                          log("Clicked  login");
+
+                          final loginProvider = Provider.of<LoginProvider>(
+                            context,
+                            listen: false,
+                          );
+
+                          final String username = emailController.text;
+                          final String password = passwordController.text;
+                          if (username.isNotEmpty && password.isNotEmpty) {
+                            loginProvider
+                                .login(username: username, password: password)
+                                .then((bool loginSuccess) {
+                                  if (loginSuccess) {
+                                    navigatorKey.currentState
+                                        ?.pushReplacementNamed(AppRoutes.home);
+                                  } else {}
+                                });
+                          } else {
+                            /* Fluttertoast.showToast(
+                              msg: "Enter username or password",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+
+                              backgroundColor: Colors.redAccent,
+                              textColor: Colors.white,
+                              webPosition: 'bottom',
+                              fontSize: 16.0,
+                            ); */
+                          }
                         },
                       ),
                       const Spacer(),
