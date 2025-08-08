@@ -15,6 +15,8 @@ A clean, modular, and scalable Flutter application built as part of a machine te
 
 ## 📁 Project Structure (Clean Architecture + MVVM)
 <img width="570" height="531" alt="project structure" src="https://github.com/user-attachments/assets/cf45c583-9030-478b-bd46-01e64c4ffd12" />
+<img width="320" height="787" alt="image" src="https://github.com/user-attachments/assets/16879bc8-04fd-47a8-a7ea-e0538dbd21f8" />
+
 
 
 ---
