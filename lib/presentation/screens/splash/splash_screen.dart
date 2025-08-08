@@ -1,4 +1,3 @@
-import 'package:app/main.dart';
 import 'package:app/presentation/provider/splash_provider.dart';
 import 'package:app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +15,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     final splashProvider = Provider.of<SplashProvider>(context, listen: false);
-    splashProvider.checkToken().then((_) {
-      if (splashProvider.isLoggedIn) {
-        navigatorKey.currentState?.pushNamed(AppRoutes.home);
+    splashProvider.checkIfAlreadyLoggedIn().then((bool loggedIn) {
+      if (!mounted) return;
+      if (loggedIn) {
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
       } else {
-        navigatorKey.currentState?.pushNamed(AppRoutes.login);
+        Navigator.pushReplacementNamed(context, AppRoutes.login);
       }
     });
   }

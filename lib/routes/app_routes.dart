@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String login = '/login_page';
-  static const String home = '/home_page'; /* patient list screen = home */
+  static const String home = '/home_page';
   static const String register = '/register_page';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -17,10 +17,9 @@ class AppRoutes {
       case login:
         return MaterialPageRoute(builder: (_) => LoginPage());
       case home:
-        return MaterialPageRoute(builder: (_)=> HomePatientListPage());
-       case register:
-        return MaterialPageRoute(builder: (_)=> RegisterPage());
-
+        return MaterialPageRoute(builder: (_) => HomePatientListPage());
+      case register:
+        return MaterialPageRoute(builder: (_) => RegisterPage());
 
       default:
         return MaterialPageRoute(

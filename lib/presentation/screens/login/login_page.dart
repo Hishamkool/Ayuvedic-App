@@ -1,6 +1,7 @@
 import 'package:app/core/constants/app_colors.dart';
 import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
 import 'package:app/presentation/widgets/elevated_button_widget.dart';
+import 'package:app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -81,7 +82,12 @@ class LoginPage extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 135),
-                      ElevatedButtonWidget(label: "Login", onPressed: () {}),
+                      ElevatedButtonWidget(
+                        label: "Login",
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.home);
+                        },
+                      ),
                       const Spacer(),
                       Center(
                         child: Padding(
