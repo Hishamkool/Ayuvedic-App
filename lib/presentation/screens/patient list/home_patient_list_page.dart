@@ -18,30 +18,7 @@ class HomePatientListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-    /* Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        backgroundColor: Colors.amber,
-        automaticallyImplyLeading: false,
-        actionsPadding: EdgeInsets.zero,
-        
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-        ],
-      ),
-      extendBodyBehindAppBar: true,
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: ListView(children: [
-          
-        ],
-      ),
-        ),
-      ),
-    ) ;*/
-    Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
@@ -50,7 +27,7 @@ class HomePatientListPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /*    Top Row with back, search, notification  */
-              AppbarNotificationWidget(),
+              AppbarNotificationWidget(isHomePage: true,),
               const SizedBox(height: 10),
               /* search field */
               Row(

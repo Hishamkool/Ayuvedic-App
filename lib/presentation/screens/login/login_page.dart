@@ -1,14 +1,13 @@
-import 'dart:developer';
 
 import 'package:app/core/constants/app_colors.dart';
 import 'package:app/main.dart';
 import 'package:app/presentation/provider/login_provider.dart';
+import 'package:app/presentation/utils/snackbar_helper.dart';
 import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
 import 'package:app/presentation/widgets/elevated_button_widget.dart';
 import 'package:app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,6 +34,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // final loginProvider = Provider.of<LoginProvider>(context,listen: false);
+
+    // changing status bar colour using annotated region
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -110,39 +112,57 @@ class _LoginPageState extends State<LoginPage> {
 
                       const SizedBox(height: 135),
 
-                      ElevatedButtonWidget(
-                        label: "Login",
-                        onPressed: () {
-                          log("Clicked  login");
-
-                          final loginProvider = Provider.of<LoginProvider>(
-                            context,
-                            listen: false,
-                          );
-
-                          final String username = emailController.text;
-                          final String password = passwordController.text;
-                          if (username.isNotEmpty && password.isNotEmpty) {
-                            loginProvider
-                                .login(username: username, password: password)
-                                .then((bool loginSuccess) {
-                                  if (loginSuccess) {
-                                    navigatorKey.currentState
-                                        ?.pushReplacementNamed(AppRoutes.home);
-                                  } else {}
-                                });
+                      /* Login button */
+                      Consumer<LoginProvider>(
+                        builder: (context, loginProvider, child) {
+                          if (loginProvider.isLoading) {
+                            return Center(
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              ),
+                            );
                           } else {
-                            /* Fluttertoast.showToast(
-                              msg: "Enter username or password",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 1,
+                            return ElevatedButtonWidget(
+                              label: "Login",
+                              onPressed: () {
+                                final loginProvider =
+                                    Provider.of<LoginProvider>(
+                                      context,
+                                      listen: false,
+                                    );
 
-                              backgroundColor: Colors.redAccent,
-                              textColor: Colors.white,
-                              webPosition: 'bottom',
-                              fontSize: 16.0,
-                            ); */
+                                final String username = emailController.text;
+                                final String password = passwordController.text;
+                                if (username.isNotEmpty &&
+                                    password.isNotEmpty) {
+                                  loginProvider
+                                      .login(
+                                        username: username,
+                                        password: password,
+                                      )
+                                      .then((loginSuccess) {
+                                        if (loginSuccess) {
+                                          navigatorKey.currentState
+                                              ?.pushReplacementNamed(
+                                                AppRoutes.home,
+                                              );
+                                        } else {
+                                         /*  SnackbarHelper.showError(
+                                            "Login failed",
+                                          ); */
+                                        }
+                                      });
+                                } else {
+                                  SnackbarHelper.showError(
+                                    "Username or password is empty",
+                                  );
+                                }
+                              },
+                            );
                           }
                         },
                       ),

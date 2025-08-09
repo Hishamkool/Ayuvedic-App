@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:app/core/DI/api_module.dart';
 import 'package:app/core/network/api_client.dart';
+import 'package:app/presentation/utils/snackbar_helper.dart';
 import 'package:app/services/app_storage_service.dart';
 import 'package:flutter/foundation.dart';
 
@@ -33,6 +34,7 @@ class LoginProvider extends ChangeNotifier {
 
         return true;
       } else {
+        SnackbarHelper.showError("Login failed ${response.message}");
         if (kDebugMode) {
           print(
             "status ${response.status} login failed , token: ${response.token}",

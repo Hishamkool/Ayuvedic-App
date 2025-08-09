@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppbarNotificationWidget extends StatelessWidget {
-  const AppbarNotificationWidget({super.key});
+  final bool isHomePage;
+  const AppbarNotificationWidget({super.key, this.isHomePage = false});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,11 @@ class AppbarNotificationWidget extends StatelessWidget {
         IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            if (isHomePage) {
+              SystemNavigator.pop();
+            } else {
+              Navigator.pop(context);
+            }
           },
         ),
         Stack(

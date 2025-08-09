@@ -9,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();  
   final prefs = await SharedPreferences.getInstance();
-  await prefs.clear(); // to temporarily clear share prefs instead of logout
+  await prefs.clear(); // to temporarily clear share prefs every time app loads instead of logout
   runApp(
     MultiProvider(
       providers: [
