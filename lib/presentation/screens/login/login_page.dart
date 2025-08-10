@@ -1,11 +1,11 @@
 
-import 'package:app/core/constants/app_colors.dart';
-import 'package:app/main.dart';
-import 'package:app/presentation/provider/login_provider.dart';
-import 'package:app/presentation/utils/snackbar_helper.dart';
-import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
-import 'package:app/presentation/widgets/elevated_button_widget.dart';
-import 'package:app/routes/app_routes.dart';
+import 'package:ayurvedic_app/core/constants/app_colors.dart';
+import 'package:ayurvedic_app/main.dart';
+import 'package:ayurvedic_app/presentation/provider/login_provider.dart';
+import 'package:ayurvedic_app/presentation/utils/snackbar_helper.dart';
+import 'package:ayurvedic_app/presentation/widgets/custom_textfiled_with_label_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/elevated_button_widget.dart';
+import 'package:ayurvedic_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

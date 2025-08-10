@@ -1,4 +1,4 @@
-import 'package:app/main.dart';
+import 'package:ayurvedic_app/main.dart';
 import 'package:flutter/material.dart';
 
 /* eg 

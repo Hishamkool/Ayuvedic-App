@@ -1,6 +1,6 @@
-import 'package:app/core/constants/app_colors.dart';
-import 'package:app/presentation/widgets/appbar_notification_widget.dart';
-import 'package:app/routes/app_routes.dart';
+import 'package:ayurvedic_app/core/constants/app_colors.dart';
+import 'package:ayurvedic_app/presentation/widgets/appbar_notification_widget.dart';
+import 'package:ayurvedic_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePatientListPage extends StatelessWidget {

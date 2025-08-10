@@ -1,5 +1,5 @@
-import 'package:app/core/constants/app_constants.dart';
-import 'package:app/data/models/login_response.dart';
+import 'package:ayurvedic_app/core/constants/app_constants.dart';
+import 'package:ayurvedic_app/data/models/login_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

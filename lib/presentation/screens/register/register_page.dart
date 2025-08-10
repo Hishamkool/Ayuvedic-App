@@ -1,7 +1,7 @@
-import 'package:app/presentation/widgets/appbar_notification_widget.dart';
-import 'package:app/presentation/widgets/custom_textfiled_with_label_widget.dart';
-import 'package:app/presentation/widgets/elevated_button_widget.dart';
-import 'package:app/presentation/widgets/register%20widgets/treatments_widgets.dart';
+import 'package:ayurvedic_app/presentation/widgets/appbar_notification_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/custom_textfiled_with_label_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/elevated_button_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/register%20widgets/treatments_widgets.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -143,6 +143,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       const SizedBox(height: 16),
                       CustomTextfiledWithLabelWidget(
+                        
                         label: "Balance amount",
                         hintText: "",
                         textInputType: TextInputType.number,

@@ -1,10 +1,10 @@
 import 'dart:developer';
 
-import 'package:app/core/DI/api_module.dart';
-import 'package:app/core/network/api_client.dart';
-import 'package:app/main.dart';
-import 'package:app/routes/app_routes.dart';
-import 'package:app/services/app_storage_service.dart';
+import 'package:ayurvedic_app/core/DI/api_module.dart';
+import 'package:ayurvedic_app/core/network/api_client.dart';
+import 'package:ayurvedic_app/main.dart';
+import 'package:ayurvedic_app/routes/app_routes.dart';
+import 'package:ayurvedic_app/services/app_storage_service.dart';
 import 'package:flutter/foundation.dart';
 
 class SplashProvider extends ChangeNotifier {

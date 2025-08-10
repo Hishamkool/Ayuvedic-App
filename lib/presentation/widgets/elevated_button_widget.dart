@@ -1,4 +1,4 @@
-import 'package:app/core/constants/app_colors.dart';
+import 'package:ayurvedic_app/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {

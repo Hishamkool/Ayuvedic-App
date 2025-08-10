@@ -1,4 +1,4 @@
-import 'package:app/core/constants/app_constants.dart';
+import 'package:ayurvedic_app/core/constants/app_constants.dart';
 import 'package:dio/dio.dart';
 
 class DioClient {

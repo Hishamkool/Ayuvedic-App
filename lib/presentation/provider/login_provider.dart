@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:app/core/DI/api_module.dart';
-import 'package:app/core/network/api_client.dart';
-import 'package:app/presentation/utils/snackbar_helper.dart';
-import 'package:app/services/app_storage_service.dart';
+import 'package:ayurvedic_app/core/DI/api_module.dart';
+import 'package:ayurvedic_app/core/network/api_client.dart';
+import 'package:ayurvedic_app/presentation/utils/snackbar_helper.dart';
+import 'package:ayurvedic_app/services/app_storage_service.dart';
 import 'package:flutter/foundation.dart';
 
 class LoginProvider extends ChangeNotifier {

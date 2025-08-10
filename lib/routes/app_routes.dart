@@ -1,7 +1,7 @@
-import 'package:app/presentation/screens/login/login_page.dart';
-import 'package:app/presentation/screens/patient%20list/home_patient_list_page.dart';
-import 'package:app/presentation/screens/register/register_page.dart';
-import 'package:app/presentation/screens/splash/splash_screen.dart';
+import 'package:ayurvedic_app/presentation/screens/login/login_page.dart';
+import 'package:ayurvedic_app/presentation/screens/patient%20list/home_patient_list_page.dart';
+import 'package:ayurvedic_app/presentation/screens/register/register_page.dart';
+import 'package:ayurvedic_app/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {

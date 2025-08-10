@@ -1,5 +1,5 @@
-import 'package:app/presentation/widgets/elevated_button_widget.dart';
-import 'package:app/presentation/widgets/register%20widgets/treatment_bottomsheet_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/elevated_button_widget.dart';
+import 'package:ayurvedic_app/presentation/widgets/register%20widgets/treatment_bottomsheet_widget.dart';
 import 'package:flutter/material.dart';
 
 class TreatmentsWidgets extends StatelessWidget {
