@@ -141,6 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                                     password.isNotEmpty) {
                                   loginProvider
                                       .login(
+                                         
                                         username: username,
                                         password: password,
                                       )
@@ -151,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                                                 AppRoutes.home,
                                               );
                                         } else {
-                                         /*  SnackbarHelper.showError(
+                                          /* SnackbarHelper.showError(
                                             "Login failed",
                                           ); */
                                         }

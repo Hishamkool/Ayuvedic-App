@@ -18,11 +18,11 @@ class Login {
     @JsonKey(name: "message")
     String message;
     @JsonKey(name: "token")
-    String token;
+    String? token;
     @JsonKey(name: "is_superuser")
-    bool isSuperuser;
+    bool? isSuperuser;
     @JsonKey(name: "user_details")
-    UserDetails userDetails;
+    UserDetails? userDetails;
 
     Login({
         required this.status,

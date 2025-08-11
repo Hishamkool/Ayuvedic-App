@@ -4,18 +4,15 @@ import 'package:ayurvedic_app/presentation/provider/splash_provider.dart';
 import 'package:ayurvedic_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();  
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.clear(); // to temporarily clear share prefs every time app loads instead of logout
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SplashProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
-
       ],
       child: MyApp(),
     ),

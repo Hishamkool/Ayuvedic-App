@@ -1,5 +1,6 @@
 import 'package:ayurvedic_app/core/constants/app_colors.dart';
 import 'package:ayurvedic_app/presentation/provider/splash_provider.dart';
+import 'package:ayurvedic_app/presentation/utils/snackbar_helper.dart';
 import 'package:ayurvedic_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Container(
         width: double.infinity,

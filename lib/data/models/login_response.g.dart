@@ -9,11 +9,11 @@ part of 'login_response.dart';
 Login _$LoginFromJson(Map<String, dynamic> json) => Login(
   status: json['status'] as bool,
   message: json['message'] as String,
-  token: json['token'] as String,
-  isSuperuser: json['is_superuser'] as bool,
-  userDetails: UserDetails.fromJson(
-    json['user_details'] as Map<String, dynamic>,
-  ),
+  token: json['token'] as String?,
+  isSuperuser: json['is_superuser'] as bool?,
+  userDetails: json['user_details'] == null
+      ? null
+      : UserDetails.fromJson(json['user_details'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$LoginToJson(Login instance) => <String, dynamic>{

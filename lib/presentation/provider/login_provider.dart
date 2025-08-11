@@ -5,12 +5,13 @@ import 'package:ayurvedic_app/core/network/api_client.dart';
 import 'package:ayurvedic_app/presentation/utils/snackbar_helper.dart';
 import 'package:ayurvedic_app/services/app_storage_service.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginProvider extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
-  String token = "";
+  String? token;
 
   // login api call
   Future<bool> login({
@@ -25,16 +26,17 @@ class LoginProvider extends ChangeNotifier {
       ApiClient api = ApiModule.provideApiService();
       final response = await api.login(username, password);
 
-      if (response.status == true && response.token.isNotEmpty) {
+      if (response.status == true && response.token != null) {
         token = response.token;
-        AppStorageService().saveLogin(token);
+        AppStorageService().saveLogin(token!);
         if (kDebugMode) {
           log("token is : $token");
         }
-
+        SnackbarHelper.showSuccess("Welcome $username !");
         return true;
       } else {
-        SnackbarHelper.showError("Login failed ${response.message}");
+        SnackbarHelper.showError("Login failed :  ${response.message}");
+
         if (kDebugMode) {
           print(
             "status ${response.status} login failed , token: ${response.token}",
@@ -54,5 +56,10 @@ class LoginProvider extends ChangeNotifier {
       _isLoading = false;
       notifyListeners();
     }
+  }
+
+  Future<void> logOut() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
   }
 }
